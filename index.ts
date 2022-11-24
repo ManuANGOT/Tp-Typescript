@@ -24,7 +24,6 @@ function opeAdd(nombre1: number, nombre2: number): void {
   const result: number = nombre1 + nombre2;
   console.log(nombre1 + " + " + nombre2 + " = " + result);
 }
-
 opeAdd(10, 25);
 
 //Exercice 3
@@ -60,6 +59,9 @@ function calculerBenefice(prixVente: number, prixFab: number): string {
 console.log(calculerBenefice(100, 150));
 
 // Exercice 4
+/**
+ *
+ */
 function AskNumber() {
   let num3: number = 25;
   let num4: number = 140;
@@ -89,7 +91,6 @@ console.log(Math.max(1, 5, 2));
 
 //Exercice 5
 const array1 = [1, 3, 2, 10, 14, 701, 80, 9, 10];
-
 console.log(Math.max(...array1));
 // attendu en console : 701
 
@@ -116,5 +117,41 @@ function mention() {
 const eleveX = console.log((nameEleve = "Dugland"), (note = 8));
 
 //Exercice7
-let userNumber1: number = 50;
-let userNumber2: number = 70;
+/**
+ * Je mets en place une fonction qui permettra de résoudre n'importe quelle opération de base,
+ * (opération, soustraction, multiplication, division)
+ *
+ * @param chiffre1
+ * @param chiffre2
+ * Lorsque l'on rentrera un opérateur +,-,* ou /, on obientra le résultat de l'opération.
+ * @param operateur
+ */
+function exercice7(
+  chiffre1: number,
+  chiffre2: number,
+  operateur: string
+): void {
+  if (operateur == "+") {
+    //console.log(resultEx7 = Chiffre1 + chiffre2);
+    const resultEx7 = chiffre1 + chiffre2;
+    console.log(`Le résultat est ${chiffre1} + ${chiffre2} = ${resultEx7}`);
+  } else if (operateur == "-") {
+    const resultEx7 = chiffre1 - chiffre2;
+    console.log(`Le résultat est ${chiffre1} - ${chiffre2} = ${resultEx7}`);
+  } else if (operateur == "*") {
+    const resultEx7 = chiffre1 * chiffre2;
+    console.log(`Le résultat est ${chiffre1} x ${chiffre2} = ${resultEx7}`);
+  } else if (operateur == "/") {
+    const resultEx7 = chiffre1 / chiffre2;
+    console.log(`Le résultat est ${chiffre1} / ${chiffre2} = ${resultEx7}`);
+  } else {
+    console.log(``);
+  }
+}
+
+exercice7(15, 20, "+");
+exercice7(15, 20, "-");
+exercice7(15, 20, "*");
+exercice7(15, 20, "/");
+
+//Exercice8
