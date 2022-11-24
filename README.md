@@ -1,2 +1,2 @@
 # Tp-Typescript
-Tp exercices TypeScript PORC Front-end Lille
+Tp exercices TypeScript POEC Front-end Lille
