@@ -1,12 +1,31 @@
 //Exercice 1
+/**
+ * Avec les deux méthodes : simple console.log et fonction
+ *
+ */
+
 const prenom2: string = "Michel";
 console.log("bonjour " + prenom2);
+// avec fonction
+function lolo(prenom3: string): string {
+  return "bonjour " + prenom3;
+}
+console.log(lolo("Michel"));
+
+lolo("Michel");
 
 //Exercice 2
-let num1: number = 1;
-let num2: number = 2;
-console.log("Le nombre 1 = " + num1 + ", le nombre 2 = " + num2);
+/**
+ * Je réalise une jolie addition
+ * @param nombre1
+ */
 
+function opeAdd(nombre1: number, nombre2: number): void {
+  const result: number = nombre1 + nombre2;
+  console.log(nombre1 + " + " + nombre2 + " = " + result);
+}
+
+opeAdd(10, 25);
 
 //Exercice 3
 let prixVente: number = 20;
@@ -21,13 +40,32 @@ function result() {
 }
 result();
 
+/**
+ * Calcul de la perte ou du bénéfice
+ * @param prixVente
+ * @param prixFab
+ * @returns
+ */
+
+function calculerBenefice(prixVente: number, prixFab: number): string {
+  const benefice: number = prixVente - prixFab;
+  if (benefice < 0) {
+    return `Perte de ${-benefice} €`;
+  } else if (benefice > 0) {
+    return `Gain de ${benefice} €`;
+  } else {
+    return `Ni perte, ni profit`;
+  }
+}
+console.log(calculerBenefice(100, 150));
+
 // Exercice 4
 function AskNumber() {
   let num3: number = 25;
   let num4: number = 140;
   let num5: number = 20;
 
-  console.log(num1, num2, num3);
+  console.log(num3, num4, num5);
 
   if (num3 > num4 && num3 > num5) {
     console.log(
@@ -55,7 +93,6 @@ const array1 = [1, 3, 2, 10, 14, 701, 80, 9, 10];
 console.log(Math.max(...array1));
 // attendu en console : 701
 
-
 //Exercice 6 :
 let nameEleve: string = "";
 let note: number = 0;
@@ -71,19 +108,13 @@ function mention() {
     console.log("Bien");
   } else if (note >= 19 && note <= 20) {
     console.log("Très bien");
-    
-  }
-  else if (note < 0 && note >20){
+  } else if (note < 0 && note > 20) {
     console.log("Note invalide");
   }
   mention();
 }
 const eleveX = console.log((nameEleve = "Dugland"), (note = 8));
 
-
 //Exercice7
-let userNumber1 : number = 50;
-let userNumber2 : number = 70;
-
-
-
+let userNumber1: number = 50;
+let userNumber2: number = 70;
