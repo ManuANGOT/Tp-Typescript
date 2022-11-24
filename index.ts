@@ -123,7 +123,7 @@ const eleveX = console.log((nameEleve = "Dugland"), (note = 8));
  *
  * @param chiffre1
  * @param chiffre2
- * Lorsque l'on rentrera un opérateur +,-,* ou /, on obientra le résultat de l'opération.
+ * Lorsque l'on rentrera un opérateur +,-,* ou /, on obtientra le résultat de l'opération.
  * @param operateur
  */
 function exercice7(
@@ -154,4 +154,23 @@ exercice7(15, 20, "-");
 exercice7(15, 20, "*");
 exercice7(15, 20, "/");
 
+
 //Exercice8
+/**
+ * Bon, je galère sur cet exercice, le reprendrai plus tard, à tête reposée.
+ * Parce que là, mon code ne mène à rien... lol *
+ 
+let userNumber = 0;
+let star = "*";
+function pyramide(userNumber) {
+  for (let i = 1; i <= userNumber; i++) {
+    console.log(`star + ${star}`);
+  }
+}
+pyramide(5);
+*/
+
+//Exercice9
+function goodNumber(userNumber2: number, nbBillets: number):void{
+
+}
