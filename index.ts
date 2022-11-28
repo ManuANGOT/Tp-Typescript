@@ -84,15 +84,42 @@ function AskNumber() {
   }
 }
 
+/*
+function(nombre4 :number,  nombre5:number, nombre6:number){
+  let plusGrandNombre : number = nombre4;
+  if (nombre5> plusGrandNombre){
+    plusGrandNombre = nombre5;
+      }
+      else if (nombre6>plusGrandNombre){
+        plusGrandNombre = nombre6;
+      }
+    }
+}
+*/
+
 console.log(AskNumber());
 // Avec une autre méthode :
 console.log(Math.max(1, 5, 2));
 //  attendu en console : 701
 
+
 //Exercice 5
 const array1 = [1, 3, 2, 10, 14, 701, 80, 9, 10];
 console.log(Math.max(...array1));
 // attendu en console : 701
+
+// Avec fonction :
+function plusGransNombreDeux(...nombres : number[]){
+  let max : number = 0
+  for (let index =0; index <nombres.length; index++){
+    if (nombres[index]>max){
+      max = nombres[index];
+    }
+  }
+  return max;
+}
+console.log(`Le nombre le plus grand est ${plusGransNombreDeux}`);
+
 
 //Exercice 6 :
 let nameEleve: string = "";
@@ -174,3 +201,5 @@ pyramide(5);
 function goodNumber(userNumber2: number, nbBillets: number):void{
 
 }
+
+// Exercice 10
