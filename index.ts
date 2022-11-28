@@ -102,17 +102,16 @@ console.log(AskNumber());
 console.log(Math.max(1, 5, 2));
 //  attendu en console : 701
 
-
 //Exercice 5
 const array1 = [1, 3, 2, 10, 14, 701, 80, 9, 10];
 console.log(Math.max(...array1));
 // attendu en console : 701
 
 // Avec fonction :
-function plusGransNombreDeux(...nombres : number[]){
-  let max : number = 0
-  for (let index =0; index <nombres.length; index++){
-    if (nombres[index]>max){
+function plusGransNombreDeux(...nombres: number[]) {
+  let max: number = 0;
+  for (let index = 0; index < nombres.length; index++) {
+    if (nombres[index] > max) {
       max = nombres[index];
     }
   }
@@ -120,8 +119,10 @@ function plusGransNombreDeux(...nombres : number[]){
 }
 console.log(`Le nombre le plus grand est ${plusGransNombreDeux}`);
 
-
 //Exercice 6 :
+/**
+ * Attribue une mention en fonction de la moyenne
+ */
 let nameEleve: string = "";
 let note: number = 0;
 
@@ -142,6 +143,35 @@ function mention() {
   mention();
 }
 const eleveX = console.log((nameEleve = "Dugland"), (note = 8));
+
+//Autre méthode :
+/**
+ *
+ * @param eleveNote
+ *  * @returns
+
+function verificationNote(eleveNote: number): boolean {
+  if (note < 0 || note > 20) {
+    return false;
+  } else {
+    return true;
+  }
+}
+function calculerMoyenne(...eleveNotes: number[]): number {
+  let moyenne = 0;
+  for (let eleveNote of eleveNotes) {
+    if (verificationNote(eleveNote)) {
+      moyenne += eleveNote;
+    } else {
+      console.log(`La note ${eleveNote} até ignorée car non valide`);
+    }
+  }
+}
+
+function bulletin(nomEleve: string, ...eleveNote: number[]): string {
+  return ``;
+}
+ */
 
 //Exercice7
 /**
@@ -181,7 +211,6 @@ exercice7(15, 20, "-");
 exercice7(15, 20, "*");
 exercice7(15, 20, "/");
 
-
 //Exercice8
 /**
  * Bon, je galère sur cet exercice, le reprendrai plus tard, à tête reposée.
@@ -195,11 +224,53 @@ function pyramide(userNumber) {
   }
 }
 pyramide(5);
+
+function pyramide(userNumber : number){
+  let ligne = ""
+  for(let index = 0; index<userNumber; index++){
+    ligne += "#"
+    console.log(ligne);
+}
+console.log(ligne + "#")
+
+for (let index =0; index <userNumber; index--){
+  ligne=ligne.substring(0, index);
+  console.log(ligne);
+}
+pyramide(8);
 */
 
 //Exercice9
-function goodNumber(userNumber2: number, nbBillets: number):void{
 
+function monnaie(newNombre : number):void {
+  const monnaies:number[]=[
+    500, 200, 100, 50, 20,10, 5, 2,1,0.5,0.2, 0.1, 0.05, 0.02,0.01,
+  ];
+
+  for (let monnaie of monnaies){
+    let nombreMonnaie = Math.floor(newNombre / monnaie);
+    if (nombreMonnaie !== 0){
+      if (monnaie >= 5) {
+        console.log(`Pièces de ${monnaie}€ : ${nombreMonnaie}`)
+      }
+      newNombre -= nombreMonnaie * monnaie
+    }
+  }
 }
+monnaie(888.88);
 
-// Exercice 10
+// Exercice 10 : définir la température la plus proche de zéro
+/**
+ * Retourne la température la plus proche de 0
+ * @param temmperatures Liste de températures
+ * @returns température 
+ */
+function temperaturePlusProcheDeZero(...temperatures: number[]) : number{
+  let plusProcheDeZero = temperatures[0];
+  for(let temperature of temperatures){
+    if (Math.abs(temperature) < Math.abs(plusProcheDeZero)){
+      plusProcheDeZero = temperature
+    }
+  }
+return plusProcheDeZero;
+}
